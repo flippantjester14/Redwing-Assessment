@@ -1,0 +1,210 @@
+:root {
+  --primary-color: #007bff;
+  --bg-color: #f8f9fa;
+  --text-color: #333;
+  --border-color: #ddd;
+  --success-color: #d4edda;
+  --success-text: #155724;
+  --danger-color: #f8d7da;
+  --danger-text: #721c24;
+  --warning-color: #fff3cd;
+  --warning-text: #856404;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.flight-date {
+  display: flex;
+  gap: 20px;
+}
+
+.flight-date label {
+  font-weight: bold;
+}
+
+.flight-date input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  margin-left: 10px;
+  font-family: inherit;
+}
+
+.flight-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.detail-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detail-group label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.detail-group input {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.add-check-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.add-check-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.add-check-form button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.add-check-form button:hover {
+  background-color: #0056b3;
+}
+
+.checklist-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 0.5fr;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 2px solid var(--border-color);
+  background-color: var(--bg-color);
+}
+
+.check-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 0.5fr;
+  align-items: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s;
+}
+
+.check-item:hover {
+  background-color: #fafafa;
+}
+
+.check-item.passed {
+  background-color: var(--success-color);
+  color: var(--success-text);
+}
+
+.check-item.failed {
+  background-color: var(--danger-color);
+  color: var(--danger-text);
+}
+
+.check-description span {
+  cursor: pointer;
+  border-bottom: 1px dashed #ccc;
+}
+
+.check-status select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.check-comment input {
+  width: 90%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
+.edit-mode {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-mode input {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+
+  .checklist-header,
+  .check-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .flight-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .flight-info span {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
